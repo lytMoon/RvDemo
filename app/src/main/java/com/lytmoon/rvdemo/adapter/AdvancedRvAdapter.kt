@@ -26,7 +26,7 @@ import com.lytmoon.rvdemo.ui.MainActivity
 class AdvancedRvAdapter : ListAdapter<RvData, ViewHolder>(object : DiffUtil.ItemCallback<RvData>() {
 
     override fun areItemsTheSame(oldItem: RvData, newItem: RvData): Boolean {
-        return oldItem == newItem
+        return oldItem.number == newItem.number
     }
 
     override fun areContentsTheSame(oldItem: RvData, newItem: RvData): Boolean {

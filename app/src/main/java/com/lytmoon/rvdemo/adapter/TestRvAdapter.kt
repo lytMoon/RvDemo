@@ -20,21 +20,18 @@ import com.lytmoon.rvdemo.bean.RvData
  *  description :
  *  saying : 这世界天才那么多，也不缺我一个
  */
-class TestRvAdapter:
+class TestRvAdapter :
     ListAdapter<RvData, TestRvAdapter.FirstViewHolder>(object : DiffUtil.ItemCallback<RvData>() {
 
         override fun areItemsTheSame(oldItem: RvData, newItem: RvData): Boolean {
-            Log.d("wefawfwefawef", "测试数据${oldItem == newItem}")
-            return oldItem == newItem
+            return oldItem.number == newItem.number
         }
 
         override fun areContentsTheSame(oldItem: RvData, newItem: RvData): Boolean {
-            Log.d("wefwaefwe", "测试数据${oldItem.number == newItem.number}")
             return oldItem.number == newItem.number
         }
 
     }) {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FirstViewHolder {
 
